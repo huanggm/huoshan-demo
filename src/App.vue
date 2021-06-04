@@ -5,7 +5,10 @@
     <router-link to="/about1">同层实验按钮</router-link> |
     <router-link to="/about2">不同层实验按钮</router-link> |
     <router-link to="/pay">测试支付页面</router-link> |
-    <router-link to="/testVisiual">可视化测试</router-link>
+    <router-link to="/testVisiual">可视化测试</router-link> |
+    <router-link to="/page/page1">多页面合并测试-page1</router-link> |
+    <router-link to="/page/page2">多页面合并测试-page2</router-link> |
+    <router-link to="/page/page3">多页面合并测试-page3</router-link>
   </div>
   <router-view />
 </template>
