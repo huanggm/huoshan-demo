@@ -1,17 +1,103 @@
 <!DOCTYPE html>
 <html lang="">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
-    <title><%= htmlWebpackPlugin.options.title %></title>
-  </head>
-  <body>
+    <title>
+        <%= htmlWebpackPlugin.options.title %>
+    </title>
+    <script>
+        (function (win, export_obj) {
+            win['TeaAnalyticsObject'] = export_obj;
+            if (!win[export_obj]) {
+                function _collect() {
+                    _collect.q.push(arguments);
+                }
+                _collect.q = _collect.q || [];
+                win[export_obj] = _collect;
+            }
+            win[export_obj].l = +new Date();
+        })(window, 'collectEvent');
+    </script>
+    <script async src="https://sf1-scmcdn-tos.pstatp.com/goofy/log-sdk/collect/collect-autotrack-rangers.js"></script>
+    <script>
+        window.collectEvent('init', {
+            app_id: 230907,
+            log: true,
+            enable_ab_test: true,
+            channel: 'cn', // 'cn'|'sg'|'va'
+        });
+
+        // window.collectEvent('getVar', 'color', '', function (value) {
+
+        //     console.log('color :>> ', value);
+
+        //     if (value === 'blue') {
+        //         //
+        //     } else if (value === 'red') {
+        //         //
+        //     } else {
+        //         //
+        //     }
+        // })
+        // window.collectEvent('getVar', 'color_extra_1', '', function (value) {
+
+        //     console.log('color_extra_1 :>> ', value);
+
+        //     if (value === '11') {
+        //         //
+        //     } else if (value === '12') {
+        //         //
+        //     } else {
+        //         //
+        //     }
+        // })
+        // window.collectEvent('getVar', 'color_extra_2', '', function (value) {
+
+        //     console.log('color_extra_2 :>> ', value);
+
+        //     if (value === '21') {
+        //         //
+        //     } else if (value === '22') {
+        //         //
+        //     } else {
+        //         //
+        //     }
+        // })
+        // window.collectEvent('getAllVars', function (value) {
+
+        //     console.log('getAllVars :>> ', value);
+
+        //     if (value === '21') {
+        //         //
+        //     } else if (value === '22') {
+        //         //
+        //     } else {
+        //         //
+        //     }
+        // })
+        // window.collectEvent('test_event', {
+        //     'from': 'index',
+        // })
+        // window.collectEvent('payOrder', {
+        //     'amount': 100
+        // })
+        // window.collectEvent('clickBtnTimes')
+        window.collectEvent('start');
+
+    </script>
+</head>
+
+<body>
     <noscript>
-      <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+        <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled.
+                Please enable it to continue.</strong>
     </noscript>
     <div id="app"></div>
     <!-- built files will be auto injected -->
-  </body>
+</body>
+
 </html>

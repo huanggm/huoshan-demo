@@ -1,9 +1,12 @@
 <template>
   <div id="nav">
     <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+    <router-link to="/about">同时测试两个按钮</router-link> |
+    <router-link to="/about1">同层实验按钮</router-link> |
+    <router-link to="/about2">不同层实验按钮</router-link> |
+    <router-link to="/pay">测试支付页面</router-link>
   </div>
-  <router-view/>
+  <router-view />
 </template>
 
 <style>
